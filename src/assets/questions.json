@@ -1,0 +1,176 @@
+{
+    "questions": [{
+            "questionText": "Выберите атрибутную директиву?",
+            "options": [{
+                    "text": "ngClass",
+                    "correct": true
+                },
+                {
+                    "text": "ngIf"
+                },
+                {
+                    "text": "ngFor"
+                },
+                {
+                    "text": "NgSwitch"
+                }
+            ]
+        },
+        {
+            "questionText": "Выберите способ/ы взаимодействия компонентов в Angular?",
+            "options": [{
+                    "text": "@Input()/@Output()"
+                },
+                {
+                    "text": "@ViewChild"
+                },
+                {
+                    "text": "service"
+                },
+                {
+                    "text": "Все варианты",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Укажите последовательность вызова методов жизненного цикла в Angular ?",
+            "options": [{
+                    "text": "ngDoCheck() -> ngOnChanges() -> ngOnInit()"
+                },
+                {
+                    "text": "ngOnChanges() -> ngOnInit() -> ngDoCheck()",
+                    "correct": true
+                },
+                {
+                    "text": "ngOnInit() -> ngOnChanges() -> ngDoCheck()"
+                },
+                {
+                    "text": "ngOnChanges() -> ngOnInit() -> ngOnDestroy()"
+                }
+            ]
+        },
+        {
+            "questionText": "Укажите форму привязки данных (Data Binding) от DOM к компоненту?",
+            "options": [{
+                    "text": "{{hero.name}}"
+                },
+                {
+                    "text": "(click)='selectHero(hero)'",
+                    "correct": true
+                },
+                {
+                    "text": "[hero]='selectedHero'"
+                },
+                {
+                    "text": "[(ngModel)]='hero.name'"
+                }
+            ]
+        },
+        {
+            "questionText": "Какой класс принимает параметры?",
+            "options": [{
+                    "text": "constructor",
+                    "correct": true
+                },
+                {
+                    "text": "destructor"
+                },
+                {
+                    "text": "import"
+                },
+                {
+                    "text": "subscribe"
+                }
+            ]
+        },
+        {
+            "questionText": "Что позволяет реализовать навигацию от одного view приложения к другому при работе пользователя с приложением?",
+            "options": [{
+                    "text": "ViewChild"
+                },
+                {
+                    "text": "proxy"
+                },
+                {
+                    "text": "public"
+                },
+                {
+                    "text": "routing",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Сущность в Angular, которая решает можно ли допустить пользователя на страницу?",
+            "options": [{
+                    "text": "proxy"
+                },
+                {
+                    "text": "Guards",
+                    "correct": true
+                },
+                {
+                    "text": "async"
+                },
+                {
+                    "text": "Promise"
+                }
+            ]
+        },
+        {
+            "questionText": "Синтаксис передачи параметров в Pipe?",
+            "options": [{
+                    "text": ":",
+                    "correct": true
+                },
+                {
+                    "text": ","
+                },
+                {
+                    "text": "|"
+                },
+                {
+                    "text": "[]"
+                }
+            ]
+        },
+        {
+            "questionText": "Какой метод массива используется для создания нового массива на основе условия?",
+            "options": [{
+                    "text": "filter",
+                    "correct": true
+                },
+                {
+                    "text": "async"
+                },
+                {
+                    "text": "map"
+                },
+                {
+                    "text": "reduce"
+                }
+            ]
+        },
+        {
+            "questionText": "Используя переменную с каким  символом, можно создать локальную HTML ссылку HTML тега?",
+            "options": [{
+                    "text": "@"
+                },
+                {
+                    "text": ":"
+                },
+                {
+                    "text": "#",
+                    "correct": true
+                },
+                {
+                    "text": "*"
+                }
+            ]
+        }
+        
+        
+        
+    ]
+}

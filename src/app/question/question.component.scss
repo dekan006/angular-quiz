@@ -1,0 +1,22 @@
+.card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+li {
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+li .card:hover {
+    border: 1px solid blue;
+}
+
+ol {
+    padding: 0 5%;
+}
+
+.card h3 {
+    min-height: 4.5rem;
+    text-align: center;
+}
