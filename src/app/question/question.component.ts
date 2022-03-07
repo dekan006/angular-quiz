@@ -14,9 +14,8 @@ export class QuestionComponent implements OnInit {
   questionList : any = [];
   currentQuestion : number = 0;
   points: number = 0;
-  limitTimeQuestion: number = 60;
+  limitTimeQuestion: number = 10;
   pointsUpQuestion: number = 10;
-  pointsDownQuestion: number = 5;
   counter : number = this.limitTimeQuestion;
   correctAnswer: number = 0;
   inCorrectAnswer: number = 0;
@@ -54,16 +53,16 @@ export class QuestionComponent implements OnInit {
       setTimeout(() => {
         this.isQuizCompleted = true;
       }, 800)
-      console.log('1');
       this.counter = 100;
-      console.log('3');
     }
     if (option.correct){
-      if (this.counter > this.limitTimeQuestion/2){
-        this.points += this.pointsUpQuestion;
-      } else {
-        this.points += this.pointsUpQuestion/2;
-      }
+      // if (this.counter > this.limitTimeQuestion/2){
+      //   this.points += this.pointsUpQuestion;
+      // } else {
+      //   this.points += this.pointsUpQuestion/2;
+      // }
+      this.points += this.counter;
+       
       
       setTimeout(()=> {
         this.currentQuestion++;
@@ -80,7 +79,6 @@ export class QuestionComponent implements OnInit {
         this.getProgressPercent();
         
       }, 1000);
-      this.points -= this.pointsDownQuestion;
       this.resetTimer();
     }
     
@@ -93,13 +91,11 @@ export class QuestionComponent implements OnInit {
       if ( this.counter === 0) {
         this.currentQuestion++;
         this.counter = this.limitTimeQuestion;
-        this.points -= this.pointsDownQuestion;
       }
     });
     }
 
   stopTimer() {
-    console.log('2');
     this.counter = 0;
     this.interval$.unsubscribe();
     
