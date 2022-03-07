@@ -53,17 +53,10 @@ export class QuestionComponent implements OnInit {
       setTimeout(() => {
         this.isQuizCompleted = true;
       }, 800)
-      this.counter = 100;
     }
     if (option.correct){
-      // if (this.counter > this.limitTimeQuestion/2){
-      //   this.points += this.pointsUpQuestion;
-      // } else {
-      //   this.points += this.pointsUpQuestion/2;
-      // }
       this.points += this.counter;
-       
-      
+
       setTimeout(()=> {
         this.currentQuestion++;
         this.correctAnswer ++;
