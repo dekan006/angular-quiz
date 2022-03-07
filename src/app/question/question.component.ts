@@ -14,7 +14,7 @@ export class QuestionComponent implements OnInit {
   questionList : any = [];
   currentQuestion : number = 0;
   points: number = 0;
-  limitTimeQuestion: number = 10;
+  limitTimeQuestion: number = 60;
   pointsUpQuestion: number = 10;
   counter : number = this.limitTimeQuestion;
   correctAnswer: number = 0;
