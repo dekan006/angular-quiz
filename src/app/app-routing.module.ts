@@ -4,9 +4,10 @@ import { QuestionComponent } from './question/question.component';
 import { WelcomComponent } from './welcom/welcom.component';
 
 const routes: Routes = [
-  {path:"", redirectTo: "welcom", pathMatch:"full"},
-  {path:"welcom", component:WelcomComponent},
-  {path:"question", component:QuestionComponent}
+  {path:"", redirectTo: "welcom", pathMatch:"full" },
+  {path:"welcom", component: WelcomComponent},
+  {path:"question", component: QuestionComponent},
+  {path:"**", redirectTo: "welcom", pathMatch:"full"},
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronLeft, faChevronRight, faRefresh } from '@fortawesome/free-solid-svg-icons';
-import { interval, subscribeOn } from 'rxjs';
+import { interval } from 'rxjs';
 import { QuestionService } from '../service/question.service';
 
 @Component({
@@ -19,27 +19,28 @@ export class QuestionComponent implements OnInit {
   counter : number = this.limitTimeQuestion;
   correctAnswer: number = 0;
   inCorrectAnswer: number = 0;
+  delayAnswer: number = 1000;
   interval$: any;
   progress: string = '0';
   isQuizCompleted : boolean = false;
+  disabledButton : boolean = true;
   
-
-  constructor(private questionServise : QuestionService) { }
-
   faChevronLeft= faChevronLeft;
   faChevronRight = faChevronRight;
   faRefresh = faRefresh;
 
+  constructor(private questionServise : QuestionService) { }
+
   ngOnInit(): void {
-    this.name = localStorage.getItem('name')!;
-    this.getAllQuestions();
-    this.startTimer();
+    this.name = localStorage.getItem('name') || '';
+    this.getAllQuestions();  
   }
   getAllQuestions() {
     this.questionServise.getQuestionJson()
     .subscribe(res => {
       this.questionList = res.questions;
     } )
+    this.startTimer();
   }
 
   nextQuestion() {
@@ -49,20 +50,23 @@ export class QuestionComponent implements OnInit {
     this.currentQuestion--;
   }
   answer(currentQuestion: number, option: any) {
+    setTimeout(()=> {
+    this.disabledButton = false;
+    }, 5000)
     if(currentQuestion === this.questionList.length) {
       setTimeout(() => {
         this.isQuizCompleted = true;
-      }, 800)
+      }, this.delayAnswer)
     }
     if (option.correct){
       this.points += this.counter;
 
       setTimeout(()=> {
         this.currentQuestion++;
-        this.correctAnswer ++;
+        this.correctAnswer++;
         this.getProgressPercent();
         
-      }, 1000);
+      }, this.delayAnswer);
       this.resetTimer();
     } else {
       
@@ -71,17 +75,17 @@ export class QuestionComponent implements OnInit {
         this.inCorrectAnswer++;
         this.getProgressPercent();
         
-      }, 1000);
+      }, this.delayAnswer);
       this.resetTimer();
     }
-    
+    this.disabledButton = true;
   }
 
   startTimer() {
-    this.interval$ = interval(1000)
+    this.interval$ = interval(this.delayAnswer)
       .subscribe(val => {
       this.counter--; 
-      if ( this.counter === 0) {
+      if ( !this.counter) {
         this.currentQuestion++;
         this.counter = this.limitTimeQuestion;
       }
@@ -111,12 +115,19 @@ export class QuestionComponent implements OnInit {
   }
 
   getProgressPercent(){
+    if (this.questionList.length === 0) {
+      return 0;
+    }
     this.progress = (((this.correctAnswer + this.inCorrectAnswer)/this.questionList.length)*100).toString();
     return this.progress;
   }
 
   getCorrectPercent(){
+    if (this.questionList.length === 0) {
+      return 0;
+    }
     return Math.round((this.correctAnswer/this.questionList.length)*100)
   }
+  
 
 }

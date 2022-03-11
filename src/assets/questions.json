@@ -46,12 +46,13 @@
                     "text": "ngOnInit() -> ngOnChanges() -> ngDoCheck()"
                 },
                 {
-                    "text": "ngOnChanges() -> ngOnInit() -> ngOnDestroy()"
+                    "text": "ngOnChanges() -> ngOnInit() -> ngOnDestroy()",
+                    "correct": true
                 }
             ]
         },
         {
-            "questionText": "Укажите форму привязки данных (Data Binding) от DOM к компоненту?",
+            "questionText": "Укажите форму привязки данных от DOM к компоненту (вызов события)?",
             "options": [{
                     "text": "{{hero.name}}"
                 },
@@ -145,7 +146,7 @@
                     "text": "async"
                 },
                 {
-                    "text": "map"
+                    "text": "push"
                 },
                 {
                     "text": "reduce"

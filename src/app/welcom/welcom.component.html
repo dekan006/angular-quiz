@@ -5,7 +5,7 @@
     <h4>Правила:</h4>
     <ol>
         <li>60 секунд на каждый вопрос</li>
-        <li>Правильный ответ - добавляет балы</li>
+        <li>Правильный ответ - добавляет баллы</li>
         <li>Вопрос можно пропустить</li>
         
     </ol>
@@ -13,7 +13,7 @@
     <div class="name  my-3">
         <label for="">Введите ваше Имя:</label>
         <input #name type="text" class="form-control">
-        <button class="btn btn-primary btn-lg" routerLink="/question" (click)="startQuiz()">Начать</button>
+        <button class="btn btn-primary btn-lg" routerLink="/question" (click)="startQuiz(name.value)">Начать</button>
     </div>
     
 </div>
