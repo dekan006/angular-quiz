@@ -22,9 +22,9 @@
                     <h5>{{counter}} сек ⏱</h5>
                 </div>
             </div>
-            <div class="progress mb-3 ">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+              </div>
             <div class="question">
                <div class="card">
                    <h3>{{questionList[currentQuestion]?.questionText}}</h3>
